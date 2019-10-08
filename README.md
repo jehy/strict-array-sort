@@ -1,12 +1,12 @@
-# array-sort-strict
+# strict-array-sort
 
-[![npm](https://img.shields.io/npm/v/array-sort-strict.svg)](https://npm.im/array-sort-strict)
-[![license](https://img.shields.io/npm/l/array-sort-strict.svg)](https://npm.im/array-sort-strict)
-[![Build Status](https://travis-ci.org/jehy/array-sort-strict.svg?branch=master)](https://travis-ci.org/jehy/array-sort-strict)
-[![dependencies Status](https://david-dm.org/jehy/array-sort-strict/status.svg)](https://david-dm.org/jehy/array-sort-strict)
-[![devDependencies Status](https://david-dm.org/jehy/array-sort-strict/dev-status.svg)](https://david-dm.org/jehy/array-sort-strict?type=dev)
-[![Coverage Status](https://coveralls.io/repos/github/jehy/array-sort-strict/badge.svg?branch=master)](https://coveralls.io/github/jehy/array-sort-strict?branch=master)
-[![Known Vulnerabilities](https://snyk.io/test/github/jehy/array-sort-strict/badge.svg)](https://snyk.io/test/github/jehy/array-sort-strict)
+[![npm](https://img.shields.io/npm/v/strict-array-sort.svg)](https://npm.im/strict-array-sort)
+[![license](https://img.shields.io/npm/l/strict-array-sort.svg)](https://npm.im/strict-array-sort)
+[![Build Status](https://travis-ci.org/jehy/strict-array-sort.svg?branch=master)](https://travis-ci.org/jehy/strict-array-sort)
+[![dependencies Status](https://david-dm.org/jehy/strict-array-sort/status.svg)](https://david-dm.org/jehy/strict-array-sort)
+[![devDependencies Status](https://david-dm.org/jehy/strict-array-sort/dev-status.svg)](https://david-dm.org/jehy/strict-array-sort?type=dev)
+[![Coverage Status](https://coveralls.io/repos/github/jehy/strict-array-sort/badge.svg?branch=master)](https://coveralls.io/github/jehy/strict-array-sort?branch=master)
+[![Known Vulnerabilities](https://snyk.io/test/github/jehy/strict-array-sort/badge.svg)](https://snyk.io/test/github/jehy/strict-array-sort)
 
 # The problem
 

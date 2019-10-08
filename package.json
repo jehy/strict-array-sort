@@ -1,6 +1,6 @@
 {
   "name": "strict-array-sort",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Check for wrong Array.sort",
   "repository": {
     "type": "git",

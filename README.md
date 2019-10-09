@@ -10,19 +10,20 @@
 
 # The problem
 
-Many developers don't look up documentation quite enough, and sometimes
-think that comparator function in Array.sort should return boolean, for example
+Many developers don't look up 
+[documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort) quite enough, and sometimes
+think that comparator function in `Array.sort` should return boolean and implement
+sorting like this:
 ```
 [1,3,2,4,5].sort((a,b)=>a>b);
 ```
-
+returns
 ```
 [ 1, 2, 3, 4, 5 ]
 ```
-But that's the case! Comparator function should return positive number, negative
-number and zero. That's why:
-
-For more complex arrays boolean result stops working:
+Sometimes it even works if you are lucky.
+But comparator function should return positive number, negative
+number or zero, otherwise sorting is broken:
 ```js
 [5, 8, 7, 1, 2, 3, 4, 6, 9, 10, 11, 12, 13].sort((a, b) => a > b)
 ```
@@ -31,7 +32,9 @@ returns
 ```
 [ 4, 5, 3, 1, 2, 6, 7, 8, 9, 10, 11, 12, 13 ]
 ```
-Also, latest V8 changes sorting, and even simple arrays stopped sorting correctly:
+Also, there
+[were changes in sorting in V8](https://v8.dev/blog/array-sort#accessors-prototype),
+and using booleans in comparators is broken even more than it was before.
 ```js
 [1,3,2,4,5].sort((a,b)=>a>b);
 ```
@@ -45,6 +48,7 @@ Also, latest V8 changes sorting, and even simple arrays stopped sorting correctl
 
 Of cause, you will have to fix your code.
 But to fix something, you need to find it at first, yeah?
+And sometimes you have a really large codebase to search in.
 That's when this module will help you. It has two modes:
 
 ## Strict mode
@@ -61,6 +65,7 @@ strictSort.apply();
 ## Soft mode
 
 If you don't want to throw errors, and want to just write logs, you can do it too:
+
 ```js
 const strictSort = require('strict-array-sort');
 strictSort.apply((res)=>console.log(`Wrong sort result ${res} on ${new Error().stack}`);
@@ -69,6 +74,6 @@ strictSort.apply((res)=>console.log(`Wrong sort result ${res} on ${new Error().s
 
 ## Warning
 
-This module rewrites `Array.sort` prototype to add check for comparator.
+This module overrides `Array.sort` prototype to add check for comparator.
 
-It is pretty dangerous and should not be used in production code.
+It is pretty dangerous and probably should not be used in production code.

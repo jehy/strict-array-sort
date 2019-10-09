@@ -13,10 +13,10 @@ function apply(logFunc) {
     const compareFunctionOverride = (a, b) => {
       const res = compareFunction(a, b);
       if (!loggedShit && Number.isNaN(parseInt(res, 10))) {
-        loggedShit = true;
         if (!logFunc) {
           throw new TypeError(`Wrong comparator result in sort function: "${res}"`);
         }
+        loggedShit = true;
         logFunc(res);
       }
       return res;

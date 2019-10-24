@@ -14,7 +14,7 @@ function apply(logFunc) {
       const res = compareFunction(a, b);
       if (!loggedShit && Number.isNaN(parseInt(res, 10))) {
         if (!logFunc) {
-          throw new TypeError(`Wrong comparator result in sort function: "${res}" lh: "${JSON.stringify(a)}", rh: "${JSON.stringify(b)}"`);
+          throw new TypeError(`Wrong comparator result in sort function: "${res}" a: "${JSON.stringify(a)}", b: "${JSON.stringify(b)}"`);
         }
         loggedShit = true;
         logFunc(res, a, b);

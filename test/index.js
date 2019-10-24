@@ -66,7 +66,13 @@ describe('fix array sort', ()=>{
       assert(loggerFunc.withArgs(NaN).calledOnce);
       [19, 21].sort(()=> NaN);
       assert(loggerFunc.calledThrice);
-      assert(loggerFunc.withArgs(NaN, 19, 21).calledOnce);
+      // HACK: node 10 has different comparator call with different args order!
+      if (process.version.substr(1).split('.')[0] > 10) {
+        assert.equal(loggerFunc.withArgs(NaN, 21, 19).callCount, 1);
+      }
+      else {
+        assert(loggerFunc.withArgs(NaN, 19, 21).calledOnce);
+      }
     });
   });
 });

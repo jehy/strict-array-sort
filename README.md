@@ -68,7 +68,8 @@ If you don't want to throw errors, and want to just write logs, you can do it to
 
 ```js
 const strictSort = require('strict-array-sort');
-strictSort.apply((res)=>console.log(`Wrong sort result ${res} on ${new Error().stack}`);
+strictSort
+  .apply((res, a, b)=>console.log(`Wrong sort result ${res} with args ${a} and ${b} on ${new Error().stack}`));
 ```
 
 

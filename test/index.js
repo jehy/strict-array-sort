@@ -64,6 +64,9 @@ describe('fix array sort', ()=>{
       [1, 2, 3, 4, 5].sort(()=>NaN);
       assert(loggerFunc.calledTwice);
       assert(loggerFunc.withArgs(NaN).calledOnce);
+      [19, 21].sort(()=> NaN);
+      assert(loggerFunc.calledThrice);
+      assert(loggerFunc.withArgs(NaN, 19, 21).calledOnce);
     });
   });
 });
